@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* Animación de entrada para el sitio */
+        /* Animación de entrada */
         .animate-entrance {
             animation: entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
@@ -19,17 +19,17 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        /* Animación flotante para iconos */
+        /* Animación flotante */
         .animate-float {
-            animation: float 3s ease-in-out infinite;
+            animation: float 3.5s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
         }
 
-        /* Animación de balanceo para las hojas del header */
+        /* Animación de balanceo para las hojas */
         .animate-sway {
             animation: sway 6s ease-in-out infinite;
             transform-origin: center;
@@ -50,17 +50,16 @@
             50% { transform: rotate(0deg) scale(1.05); }
         }
 
-        /* Pulso sutil para la caja de tesoros */
+        /* Pulso para la caja de tesoros */
         .animate-pulse-subtle {
             animation: pulseSubtle 4s ease-in-out infinite;
         }
 
         @keyframes pulseSubtle {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1); }
-            50% { transform: scale(1.01); box-shadow: 0 20px 30px -5px rgba(249, 115, 22, 0.3); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.015); box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.4); }
         }
 
-        /* Tabs logic */
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -82,15 +81,15 @@
                         JARDÍN BOTÁNICO
                     </div>
                 </div>
-                <!-- Hojas con animación permanente de balanceo -->
                 <svg class="absolute top-0 left-0 p-4 opacity-20 text-white animate-sway" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8a7 7 0 0 1-10 10zM11 20a11.3 11.3 0 0 0-8-12M11 13a4 4 0 0 0-4-4"/></svg>
                 <svg class="absolute bottom-0 right-0 p-4 opacity-20 text-white animate-sway-alt" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8a7 7 0 0 1-10 10zM11 20a11.3 11.3 0 0 0-8-12M11 13a4 4 0 0 0-4-4"/></svg>
             </div>
 
             <!-- Navegación -->
             <div class="flex bg-white border-b border-green-100">
-                <button onclick="showTab('invite')" id="btn-invite" class="tab-button active flex-1 py-4 font-bold text-xs transition-all text-emerald-600">LA CITA</button>
-                <button onclick="showTab('games')" id="btn-games" class="tab-button flex-1 py-4 font-bold text-xs transition-all text-slate-400">LOS RETOS</button>
+                <button onclick="showTab('invite')" id="btn-invite" class="tab-button active flex-1 py-4 font-bold text-[10px] md:text-xs transition-all text-emerald-600 uppercase">La Cita</button>
+                <button onclick="showTab('games')" id="btn-games" class="tab-button flex-1 py-4 font-bold text-[10px] md:text-xs transition-all text-slate-400 uppercase">Retos</button>
+                <button onclick="showTab('rules')" id="btn-rules" class="tab-button flex-1 py-4 font-bold text-[10px] md:text-xs transition-all text-slate-400 uppercase">Normas</button>
             </div>
 
             <!-- Contenido -->
@@ -100,7 +99,7 @@
                 <div id="invite" class="tab-content active space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-green-50 p-6 rounded-[2rem] border-2 border-green-100 flex items-center gap-6 shadow-sm">
-                            <div class="bg-green-500 p-3 rounded-2xl text-white shrink-0 animate-float" style="animation-delay: 0s;">
+                            <div class="bg-green-500 p-3 rounded-2xl text-white shrink-0 animate-float">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                             </div>
                             <div class="text-left">
@@ -143,12 +142,11 @@
                         </div>
                     </div>
 
-                    <!-- Picnic -->
                     <div class="bg-lime-50 p-6 rounded-3xl border-2 border-lime-100 flex items-center gap-6 shadow-sm text-left">
                         <div class="bg-lime-500 p-3 rounded-2xl text-white shrink-0 animate-float" style="animation-delay: 1.5s;">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01M11 15h.01M10 10h.01M2 16a20 20 0 0 0 18-12A20 20 0 0 0 2 16zM11 5l9 7"></path></svg>
                         </div>
-                        <div class="flex-1">
+                        <div class="flex-1 text-left">
                             <h4 class="font-bold text-lime-900 text-sm italic uppercase tracking-tighter">Picnic Compartido</h4>
                             <p class="text-lime-800 text-xs font-semibold leading-tight">Cada uno lleva algo de picar o beber para celebrar al final de los juegos.</p>
                         </div>
@@ -158,49 +156,76 @@
                 <!-- Pestaña RETOS -->
                 <div id="games" class="tab-content space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
-                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center transition-transform hover:scale-105">
-                            <div class="mb-4 bg-sky-50 w-12 h-12 rounded-2xl flex items-center justify-center text-sky-500 animate-float">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            </div>
+                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center">
+                            <div class="mb-4 bg-sky-50 w-12 h-12 rounded-2xl flex items-center justify-center text-sky-500 animate-float"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
                             <h4 class="font-black text-lg mb-1 uppercase italic tracking-tighter">Aviones de Papel</h4>
-                            <p class="text-slate-500 text-sm font-medium">Física y nostalgia en el césped.</p>
+                            <p class="text-slate-500 text-sm font-medium">Lanzamientos en el césped.</p>
                         </div>
-                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center transition-transform hover:scale-105">
-                            <div class="mb-4 bg-amber-50 w-12 h-12 rounded-2xl flex items-center justify-center text-amber-500 animate-float" style="animation-delay: 0.2s;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3Z"></path></svg>
-                            </div>
+                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center">
+                            <div class="mb-4 bg-amber-50 w-12 h-12 rounded-2xl flex items-center justify-center text-amber-500 animate-float"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3Z"></path></svg></div>
                             <h4 class="font-black text-lg mb-1 uppercase italic tracking-tighter">Torre de Vasos</h4>
-                            <p class="text-slate-500 text-sm font-medium">Arquitectura frágil vs la brisa.</p>
+                            <p class="text-slate-500 text-sm font-medium">Arquitectura vs Brisa.</p>
                         </div>
-                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center transition-transform hover:scale-105">
-                            <div class="mb-4 bg-rose-50 w-12 h-12 rounded-2xl flex items-center justify-center text-rose-500 animate-float" style="animation-delay: 0.4s;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                            </div>
+                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center">
+                            <div class="mb-4 bg-rose-50 w-12 h-12 rounded-2xl flex items-center justify-center text-rose-500 animate-float"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
                             <h4 class="font-black text-lg mb-1 uppercase italic tracking-tighter">Trivia Social</h4>
-                            <p class="text-slate-500 text-sm font-medium">Descubriendo secretos de amigos.</p>
+                            <p class="text-slate-500 text-sm font-medium">Adivinando Fun Facts.</p>
                         </div>
-                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center transition-transform hover:scale-105">
-                            <div class="mb-4 bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-500 animate-float" style="animation-delay: 0.6s;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                            </div>
+                        <div class="p-6 border-2 border-slate-50 rounded-[2.5rem] bg-white shadow-sm flex flex-col items-center">
+                            <div class="mb-4 bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-500 animate-float"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
                             <h4 class="font-black text-lg mb-1 uppercase italic tracking-tighter">Búsqueda Inversa</h4>
-                            <p class="text-slate-500 text-sm font-medium">¡El primero que saque el objeto gana!</p>
+                            <p class="text-slate-500 text-sm font-medium">Objetos flash del bolso.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="p-6 bg-slate-900 rounded-[2rem] text-white flex gap-4 items-start border-4 border-slate-800 text-left">
-                        <svg class="text-yellow-400 shrink-0 animate-float" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                        <div>
-                            <h4 class="font-bold text-xs uppercase tracking-widest text-emerald-400 italic">La Ley del Mesonero</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed">Cualquier trampa será castigada con servicio de mesa obligatorio durante el picnic final. ¡Seamos honestos!</p>
-                        </div>
+                <!-- Pestaña NORMAS (CORREGIDA) -->
+                <div id="rules" class="tab-content space-y-4">
+                    <div class="bg-rose-50 p-6 rounded-[2rem] border-2 border-rose-100 space-y-4 text-left">
+                        <h3 class="text-rose-700 font-black uppercase text-sm italic flex items-center gap-2 tracking-tighter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            ¡Prohibido el Ingreso!
+                        </h3>
+                        <ul class="text-[11px] text-rose-800 font-bold space-y-2 list-disc pl-4 leading-tight">
+                            <li>Balones, pelotas, frisbees, cometas o lazos.</li>
+                            <li>Globos de látex o metalizados, confeti o serpentinas.</li>
+                            <li>Mascotas (sin excepción).</li>
+                            <li>Icopor (poliestireno), pintura o aerosoles.</li>
+                            <li>Carpas de camping, hamacas o mobiliario externo.</li>
+                            <li>Fuego (velas, carbón) y Pólvora.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-emerald-50 p-6 rounded-[2rem] border-2 border-emerald-100 space-y-4 text-left">
+                        <h3 class="text-emerald-700 font-black uppercase text-sm italic flex items-center gap-2 tracking-tighter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            Cuidado del Entorno
+                        </h3>
+                        <ul class="text-[11px] text-emerald-800 font-bold space-y-2 list-disc pl-4 leading-tight">
+                            <li>No tocar, sustraer ni pisar las plantas.</li>
+                            <li>Clasificar residuos en los puntos ecológicos.</li>
+                            <li>Espacio 100% libre de humo.</li>
+                            <li>Uso obligatorio de baños.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-[2rem] border-2 border-blue-100 space-y-4 text-left">
+                        <h3 class="text-blue-700 font-black uppercase text-sm italic flex items-center gap-2 tracking-tighter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            Ingreso y Parqueadero
+                        </h3>
+                        <ul class="text-[11px] text-blue-800 font-bold space-y-2 list-disc pl-4 leading-tight">
+                            <li>Registro individual obligatorio mostrando la cédula.</li>
+                            <li><strong>Parqueadero:</strong> Usar el parqueadero oficial del Jardín (entrada principal) o zonas aledañas (Parque Explora / Bosque Plaza).</li>
+                            <li>Llegar 10 minutos antes para el registro.</li>
+                        </ul>
                     </div>
                 </div>
 
             </div>
 
-            <div class="bg-emerald-50 p-6 text-center border-t border-green-100">
-                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <div class="bg-emerald-50 p-4 text-center border-t border-green-100">
+                <p class="text-slate-400 text-[9px] font-bold uppercase tracking-[0.3em]">
                     28 de febrero • Jardín Botánico • 2026
                 </p>
             </div>
@@ -209,23 +234,18 @@
 
     <script>
         function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(btn => {
                 btn.classList.remove('active', 'text-emerald-600');
                 btn.classList.add('text-slate-400');
                 btn.style.borderBottom = 'none';
                 btn.style.backgroundColor = 'transparent';
             });
-
             const selectedTab = document.getElementById(tabId);
             selectedTab.classList.add('active');
-            
             const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.add('active');
+            activeBtn.classList.add('active', 'text-emerald-600');
             activeBtn.classList.remove('text-slate-400');
-            activeBtn.classList.add('text-emerald-600');
             activeBtn.style.borderBottom = '4px solid #10b981';
             activeBtn.style.backgroundColor = '#f0fdf4';
         }
